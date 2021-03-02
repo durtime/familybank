@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>用户信息</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="layuimini/lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="layuimini/css/public.css" media="all">
+    
+</head>
+<body>
+<script src="layuimini/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script>
+layui.use(['form', 'laydate', 'table'], function () {
+    var $ = layui.jquery,
+        form = layui.form,
+        laydate = layui.laydate,
+        table = layui.table
+		;
+	form.on('submit(info)', function(data){
+		$.ajax({
+		    url:'UserServlet?method=info',
+		    type:'post',
+            dataType: "json",//预期服务器返回的数据类型 
+		    success:function(flag){
+		    	console.log(flag);
+		    	console.log(flag.data.username);
+
+		    	//var jsonObj = JSON.parse( flag );  
+		    	//console.log(jsonObj.data.money);
+		    	document.getElementById("musername").innerHTML=flag.data.username;
+		    	document.getElementById("mphone").innerHTML=flag.data.phone;
+		    	document.getElementById("memail").innerHTML=flag.data.mail;
+		    	document.getElementById("mmoney").innerHTML=flag.data.money;
+		    	layer.msg("查询成功",{icon:1})
+
+		    }
+		});
+	});
+});
+</script>
+<div class="layuimini-container">
+<h2 align="center">个人信息</h2>
+    <div align="center">
+		   <ul id="user_info" >
+		         <li><span>账号：</span><span id="musername"></span></li>
+		         <li><span>电话号码：</span><span id="mphone"></span></li>
+		         <li><span>email：</span><span id="memail"></span></li>
+		         <li><span>账户余额：</span><span id="mmoney"></span></li>
+		   </ul>
+    </div>
+    <div align="center" class="layuimini-main">
+         <button  class="layui-btn layui-btn-normal " lay-submit lay-filter="info">点击查询</button>
+    </div>
+    
+</div>
+
+</body>
+</html>

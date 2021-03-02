@@ -1,0 +1,73 @@
+{
+  "homeInfo": {
+    "title": "欢迎",
+    "href": "welcome.html?t=1"
+  },
+  "logoInfo": {
+    "title": "收支管理系统",
+    "image": "layuimini/images/logo.png",
+    "href": ""
+  },
+  "menuInfo": [
+    {
+      "title": "常规管理",
+      "icon": "fa fa-address-book",
+      "href": "",
+      "target": "_self",
+      "child": [
+		 {
+		 	"title": "新增收支",
+		 	"href": "",
+		 	"icon": "fa fa-drupal",
+		 	"target": "_self",
+			"child": [
+							{
+							  "title": "新增收入",
+							  "href": "newshouru.html",
+							  "icon": "fa fa-bitbucket-square",
+							  "target": "_self"
+							},
+							{
+							  "title": "新增支出",
+							  "href": "newzhichu.html",
+							  "icon": "fa fa-codepen",
+							  "target": "_self"
+							}
+						  ]
+		 },
+        {
+          "title": "收支管理",
+          "href": "",
+          "icon": "fa fa-empire",
+          "target": "_self",
+          "child": [
+				{
+				  "title": "收入表",
+				  "href": "shouru_list.html",
+				  "icon": "fa fa-dashcube",
+				  "target": "_self"
+				},
+				{
+				  "title": "支出表",
+				  "href": "zhichu_list.html",
+				  "icon": "fa fa-delicious",
+				  "target": "_self"
+				}
+			  ]
+			},
+			{
+				"title": "汇总",
+				"href": "huizong.html",
+				"icon": "fa fa-pinterest",
+				"target": "_self"
+			},
+			{
+				"title": "查询",
+				"href": "select.html",
+				"icon": "fa fa-search",
+				"target": "_self"
+			}
+		]
+	}
+	]
+}
